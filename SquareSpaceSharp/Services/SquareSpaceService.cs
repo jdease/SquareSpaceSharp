@@ -70,7 +70,7 @@ namespace SquareSpaceSharp.Services
             msg.Headers.Add("user-agent", "SquareSpaceSharp");
             if (method == HttpMethod.Post)
             {
-                msg.Headers.Add("Idempotency-Key", _secretApiKey);
+                msg.Headers.Add("Idempotency-Key", Guid.NewGuid().ToString());
             }
             return msg;
         }
